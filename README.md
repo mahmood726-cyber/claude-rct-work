@@ -24,19 +24,19 @@ This directory contains all files created/modified by Claude Code for the RCT ex
 ## Source Projects
 
 Improvements were ported from:
-1. **TruthCert-Validation-Papers** (`C:\Users\user\Downloads\TruthCert-Validation-Papers`)
-2. **Wasserstein Project** (`C:\Users\user\Downloads\wasserstein`)
+1. **TruthCert-Validation-Papers** (`<user-home>/Downloads/TruthCert-Validation-Papers`)
+2. **Wasserstein Project** (`<user-home>/Downloads/wasserstein`)
 
 ## Original Location
 
 These files were originally edited in:
 ```
-C:\Users\user\rct-extractor-v2
+<user-home>/rct-extractor-v2
 ```
 
 ## To Run Tests
 
 ```bash
-cd C:\Users\user\claude-rct-work
+cd <repo-root>/claude-rct-work
 python test_improvements.py
 ```

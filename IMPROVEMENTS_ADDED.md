@@ -139,7 +139,7 @@ These improvements address key failure patterns identified in validation:
 
 Run the test suite:
 ```bash
-cd C:/Users/user/rct-extractor-v2
+cd <user-home>/rct-extractor-v2
 python -m pytest tests/ -v
 ```
 

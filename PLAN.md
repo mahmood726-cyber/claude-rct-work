@@ -247,7 +247,7 @@ Combine IPD across trials when available
 
 ### Unit Tests
 ```bash
-cd C:\Users\user\rct-extractor-v2
+cd <user-home>/rct-extractor-v2
 python -m pytest tests/ -v
 ```
 
@@ -271,8 +271,8 @@ python run_ctgov_validation.py
 ## 7. Directory Structure
 
 ```
-C:\Users\user\
-├── rct-extractor-v2\          # Main project (production)
+<user-home>/
+├── rct-extractor-v2/          # Main project (production)
 │   ├── src\                   # Source code
 │   ├── tests\                 # Test suite
 │   ├── data\gold\             # Gold standard (206 records)

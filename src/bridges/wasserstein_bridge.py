@@ -25,8 +25,12 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-# Path to Wasserstein tools
-WASSERSTEIN_DIR = r"C:\Users\user\Downloads\wasserstein"
+# Path to Wasserstein tools (env override + dev-machine fallback)
+import os
+WASSERSTEIN_DIR = os.environ.get(
+    "WASSERSTEIN_DIR",
+    str(os.path.expanduser(r"~\Downloads\wasserstein"))
+)
 
 
 # ============================================================
