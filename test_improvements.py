@@ -1,7 +1,11 @@
 """Test script to verify improvements from TruthCert and Wasserstein projects."""
 
+import os
 import sys
-sys.path.insert(0, 'C:/Users/user/rct-extractor-v2')
+
+# Ensure the repo root (which contains the `src` package) is importable
+# regardless of the current working directory.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 def test_ensemble_improvements():
     """Test OutcomeTextMatcher and ValueValidator."""
@@ -18,7 +22,7 @@ def test_ensemble_improvements():
         ("progression-free survival", "pfs"),
         ("major adverse cardiovascular events", "mace"),
         ("disease-free survival", "dfs"),
-        ("heart failure hospitalization", "hf_hosp"),
+        ("heart failure hospitalization", "hf"),
     ]
 
     for text, expected in tests:

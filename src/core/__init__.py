@@ -15,25 +15,39 @@ from .models import (
     ExtractionConfidence
 )
 
-from .extractor import RCTExtractor
+# Optional submodules: this repo ships a subset of the full extractor.
+# Guard these imports so the present modules (models, ensemble) stay
+# importable even when extractor/evaluation/meta_analysis are not vendored here.
+try:
+    from .extractor import RCTExtractor
+except ImportError:
+    RCTExtractor = None
 
-from .evaluation import (
-    Evaluator,
-    EvaluationReport,
-    load_gold_dataset,
-    evaluate_batch
-)
+try:
+    from .evaluation import (
+        Evaluator,
+        EvaluationReport,
+        load_gold_dataset,
+        evaluate_batch
+    )
+except ImportError:
+    Evaluator = EvaluationReport = load_gold_dataset = evaluate_batch = None
 
-from .meta_analysis import (
-    MetaAnalysisFields,
-    calculate_se_from_ci,
-    detect_outcome_priority,
-    classify_effect_direction,
-    detect_subgroup_analyses,
-    extract_continuous_outcomes,
-    calculate_nnt_from_rd,
-    enhance_extraction
-)
+try:
+    from .meta_analysis import (
+        MetaAnalysisFields,
+        calculate_se_from_ci,
+        detect_outcome_priority,
+        classify_effect_direction,
+        detect_subgroup_analyses,
+        extract_continuous_outcomes,
+        calculate_nnt_from_rd,
+        enhance_extraction
+    )
+except ImportError:
+    MetaAnalysisFields = calculate_se_from_ci = detect_outcome_priority = None
+    classify_effect_direction = detect_subgroup_analyses = None
+    extract_continuous_outcomes = calculate_nnt_from_rd = enhance_extraction = None
 
 from .ensemble import (
     EnsembleMerger,
