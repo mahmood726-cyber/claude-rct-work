@@ -941,7 +941,7 @@ class WassersteinBridge:
             # Fallback to Guyot
             ipd_treatment = reconstruct_ipd_guyot(treatment_curve)
             ipd_control = reconstruct_ipd_guyot(control_curve)
-            result.mae_survival = result.wasserstein_1 / 100 if result.wasserstein_1 else 0.1
+            result.mae_survival = (result.wasserstein_1 / 100) if result.wasserstein_1 is not None else 0.1
             result.grade = calculate_grade(result.mae_survival)
 
         # Calculate HR from IPD

@@ -1,0 +1,5 @@
+# Runtime dependencies for claude-rct-work
+# src/core/models.py uses pydantic v2 API (field_validator, model_validator(mode="after"))
+pydantic>=2,<3
+# src/bridges/wasserstein_bridge.py and src/core/ensemble.py use numpy
+numpy>=1.24

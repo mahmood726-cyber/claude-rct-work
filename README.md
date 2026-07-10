@@ -38,5 +38,8 @@ These files were originally edited in:
 
 ```bash
 cd <repo-root>/claude-rct-work
+pip install -r requirements.txt
 python test_improvements.py
+# or run under pytest:
+python -m pytest -q
 ```
